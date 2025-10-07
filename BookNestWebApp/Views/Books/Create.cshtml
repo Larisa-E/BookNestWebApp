@@ -1,0 +1,32 @@
+﻿@model Book
+@{
+    ViewBag.Title = "Add Book";
+}
+<h2>Add Book</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div class="mb-3">
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.Price)
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.Genre)
+        @Html.TextBoxFor(m => m.Genre, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.Stock)
+        @Html.TextBoxFor(m => m.Stock, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.AuthorID)
+        @Html.TextBoxFor(m => m.AuthorID, new { @class = "form-control" })
+    </div>
+    
+
+    <button type="submit" class="btn btn-success">Add</button>
+}

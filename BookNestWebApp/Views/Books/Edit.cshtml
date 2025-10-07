@@ -1,0 +1,31 @@
+﻿@model Book
+@{
+    ViewBag.Title = "Edit Book";
+    var authors = ViewBag.Authors as List<Author>;
+}
+<h2>Edit Book</h2>
+@Html.ValidationSummary(true)
+<form asp-action="Edit" method="post">
+    @Html.HiddenFor(m => m.BookID)
+    <div class="mb-3">
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.Price)
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.Genre)
+        @Html.TextBoxFor(m => m.Genre, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.Stock)
+        @Html.TextBoxFor(m => m.Stock, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.AuthorID)
+        @Html.DropDownListFor(m => m.AuthorID, (SelectList)ViewBag.AuthorList, "Select Author", new { @class = "form-select" })
+    </div>
+    <button type="submit" class="btn btn-warning">Save Changes</button>
+</form>
