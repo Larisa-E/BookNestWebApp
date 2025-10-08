@@ -84,7 +84,7 @@ public class BooksController : Controller
     private List<Author> GetAuthors()
     {
         var authors = new List<Author>();
-        using (var conn = new SqlConnection("Server=DESKTOP-PIU50MG;Database=BookNest;User Id=clientUser;Password=12345;Encrypt=False;"))
+        using (var conn = new SqlConnection("Server=DESKTOP-PIU50MG;Database=BookNest;Integrated Security=True;Encrypt=False;"))
         using (var cmd = new SqlCommand("SELECT AuthorID, Name FROM BookStore.Author", conn))
         {
             conn.Open();

@@ -8,7 +8,7 @@ namespace BookNestWebApp.DAL
     {
         // Connection string for BookNest DB 
         //private string connectionString = "Server=DESKTOP-PIU50MG;Database=BookNest;Integrated Security=True;Encrypt=False;";
-        private string connectionString = "Server=DESKTOP-PIU50MG;Database=BookNest;User Id=clientUser;Password=12345;Encrypt=False;";
+        private string connectionString = "Server=DESKTOP-PIU50MG;Database=BookNest;User Id=BookNestAdmin;Password=StrongAdminPassword123!;Encrypt=False;";
 
         // Retrieves books using stored procedure with optional search and sort
         public List<Book> GetBooks(string search = "", string sort = "Title")

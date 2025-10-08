@@ -1,6 +1,45 @@
-﻿@{
+﻿@model List<Book>
+@{
     ViewBag.Title = "Dashboard";
 }
-<h2>BookNest Dashboard</h2>
-
-<p>Welcome to the BookNest reporting dashboard!</p>
+<h2>Dashboard</h2>
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card text-bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Total Books</h5>
+                <p class="card-text display-6">@ViewBag.BookCount</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card text-bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Total Orders</h5>
+                <p class="card-text display-6">@ViewBag.OrderCount</p>
+            </div>
+        </div>
+    </div>
+</div>
+<h4>Recent Books</h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model.Take(10))
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.AuthorName</td>
+                <td>@book.Genre</td>
+                <td>@book.Stock</td>
+            </tr>
+        }
+    </tbody>
+</table>

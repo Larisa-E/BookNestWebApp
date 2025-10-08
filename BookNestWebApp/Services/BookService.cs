@@ -8,7 +8,8 @@ namespace BookNestWebApp.Services
     public class BookService
     {
         private BookRepository repo = new BookRepository();
-        private string connectionString = "Server=DESKTOP-PIU50MG;Database=BookNest;User Id=clientUser;Password=12345;Encrypt=False;";
+        private string connectionString = "Server=DESKTOP-PIU50MG;Database=BookNest;User Id=BookNestAdmin;Password=StrongAdminPassword123!;Encrypt=False;"; // SQL authentication
+        //private string connectionString = "Server=DESKTOP-PIU50MG;Database=BookNest;Integrated Security=True;Encrypt=False;"; // Default Connection
 
         public BookService() { }
 

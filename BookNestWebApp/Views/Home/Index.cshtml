@@ -1,5 +1,31 @@
-﻿@{
-    ViewData["Title"] = "Home";
+﻿@model List<Book>
+@{
+    ViewBag.Title = "Home";
 }
-<h1>Welcome to BookNest!</h1>
-<p>This is your home page. Use the navigation bar to access Books and Dashboard.</p>
+<div class="text-center">
+    <h1 class="display-4">Welcome to BookNest!</h1>
+    <p class="lead">We have <strong>@ViewBag.BookCount</strong> books in our collection.</p>
+</div>
+<hr />
+<h3>Featured Books</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.AuthorName</td>
+                <td>@book.Genre</td>
+                <td>@book.Price.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
